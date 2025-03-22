@@ -42,6 +42,9 @@
         a:hover {
             text-decoration: underline;
         }
+        small {
+            margin-bottom: 0.75rem;
+        }
         .footer {
             margin-top: 2rem;
             padding-top: 1rem;
@@ -49,26 +52,206 @@
             font-size: 0.9rem;
             color: #777;
         }
+        .data-description {
+            margin: 1rem 0 1.5rem 1rem;
+            border-collapse: collapse;
+            width: 90%;
+            font-size: 0.9rem;
+        }
+
+        .data-description th,
+        .data-description td {
+            padding: 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .data-description th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .data-description tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .data-description tr:hover {
+            background-color: #f1f1f1;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>ヒッパルコス・プラネタリウムデータ</h1>
+<div class="container">
+    <h1>ヒッパルコス・プラネタリウムデータ</h1>
 
-        <p>日経ソフトウエア記事「Pythonでプラネタリウムを作る」で使用する恒星データ、星座線データを公開します。これらのデータは、記事の著者が作成したもので、著作権フリーで公開しています。</p>
+    <p>
+        日経ソフトウエア記事「Pythonでプラネタリウムを作る」で使用する恒星データ、星座線データを公開します。これらのデータは、記事の著者が作成したもので、著作権フリーで公開しています。</p>
+    <p>
+        <img src="images/orion.png" alt="オリオン座" style="width: 100%; max-width: 800px;">
+    </p>
+    <h2>データファイル</h2>
+    <ul>
+        <li>
+            <a href="data/hip_lite_major.csv" download>hip_lite_major.csv</a> - 主要な恒星データ。
+            <p>
+                <small>視等級6.5以上の恒星を8789個を収録。赤緯：符号が0のとき、赤緯：度、赤緯：分、赤緯：秒の３つの角度をマイナスにします。</small>
+            </p>
+            <table class="data-description">
+                <thead>
+                <tr>
+                    <th>列</th>
+                    <th>説明</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>HIP番号：1～120416</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>赤経：時（整数）</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>赤経：分（整数）</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>赤経：秒（小数）</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>赤緯：符号（0：- 1：+）</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>赤緯：度（整数）</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>赤緯：分（整数）</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>赤緯：秒（小数）</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>視等級：等級（小数）</td>
+                </tr>
+                </tbody>
+            </table>
+        </li>
+        <li>
+            <a href="data/hip_constellation_line.csv" download>hip_constellation_line.csv</a> - 星座線データ。
+            <p>
+                <small>Stellariumの星座線データを元に作成した676行のデータ。2つののHIP番号を使って、恒星を繋ぐ星座線を描きます。</small>
+            </p>
+            <table class="data-description">
+                <thead>
+                <tr>
+                    <th>列</th>
+                    <th>説明</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>星座：略符</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>HIP番号</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>HIP番号</td>
+                </tr>
+                </tbody>
+            </table>
+        </li>
+        <li>
+            <a href="data/hip_constellation_line_star.csv" download>hip_constellation_line_star.csv</a> - 星座線の恒星データ。
+            <p>
+                <small>星座線上の恒星データ692行を収録。星座線データとペアで使用することで、星座線を描ける。赤緯：度がマイナスのときは、赤緯：分、赤緯：秒にもマイナス符号をつける必要がある。</small>
+            </p>
+            <table class="data-description">
+                <thead>
+                <tr>
+                    <th>列</th>
+                    <th>説明</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>HIP番号</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>赤経：時（整数）</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>赤経：分（整数）</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>赤経：秒（小数）</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>赤緯：度（整数）</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>赤緯：分（整数）</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>赤緯：秒（小数）</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>視等級：等級（小数）</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>年周視差（ミリ秒角）</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>赤経方向固有運動（ミリ秒角／年）</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>赤緯方向固有運動（ミリ秒角／年）</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>B-V色指数</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>V-I色指数</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>スペクトル分類</td>
+                </tr>
+                </tbody>
+            </table>
+        </li>
+    </ul>
 
-        <h2>データファイル</h2>
-        <ul>
-            <li><a href="data/hip_lite_major.csv" download>hip_lite_major.csv</a> - 主要な恒星データ</li>
-            <li><a href="data/hip_constellation_line.csv" download>hip_constellation_line.csv</a> - 星座線データ</li>
-            <li><a href="data/hip_constellation_line_star.csv" download>hip_constellation_line_star.csv</a> - 星座線の恒星データ</li>
-        </ul>
+    <p>データの作成方法は<a
+            href="https://github.com/creativival/hipparcos_planetarium_data_creator/blob/main/README.md">README.md</a>を参照してください。
+    </p>
 
-        <p>データの作成方法は<a href="https://github.com/creativival/hipparcos_planetarium_data_creator/blob/main/README.md">README.md</a>を参照してください。</p>
-
-        <div class="footer">
-            <p>© 2024 Masaya Nagaoka</p>
-        </div>
+    <div class="footer">
+        <p>© 2024 Masaya Nagaoka</p>
     </div>
+</div>
 </body>
 </html>
