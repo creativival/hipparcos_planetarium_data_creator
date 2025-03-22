@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ヒッパルコス・プラネタリウムデータ</title>
+    <title>Hipparcos Planetarium Data</title>
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -88,174 +88,175 @@
 <body>
 <div class="container">
     <div class="language-switch">
-        <span>日本語</span> | <a href="index.en.html">English</a>
+        <a href="index.html">日本語</a> | <span>English</span>
     </div>
 
-    <h1>ヒッパルコス・プラネタリウムデータ</h1>
+    <h1>Hipparcos Planetarium Data</h1>
 
     <p>
-        日経ソフトウエア記事「Pythonでプラネタリウムを作る」で使用する恒星データ、星座線データを公開します。これらのデータは、記事の著者が作成したもので、著作権フリーで公開しています。</p>
-    <p>
-        <img src="images/orion.png" alt="オリオン座" style="width: 100%; max-width: 800px;">
+        This website provides stellar data and constellation line data used in the Nikkei Software article "Creating a Planetarium with Python". These data files were created by the author of the article and are released as copyright-free.
     </p>
-    <h2>データファイル</h2>
+    <p>
+        <img src="images/orion.png" alt="Orion Constellation" style="width: 100%; max-width: 800px;">
+    </p>
+    <h2>Data Files</h2>
     <ul>
         <li>
-            <a href="data/hip_lite_major.csv" download>hip_lite_major.csv</a> - 主要な恒星データ。
+            <a href="data/hip_lite_major.csv" download>hip_lite_major.csv</a> - Major stellar data.
             <p>
-                <small>視等級6.5以上の恒星を8789個を収録。赤緯：符号が0のとき、赤緯：度、赤緯：分、赤緯：秒の３つの角度をマイナスにします。</small>
+                <small>Contains 8,789 stars with visual magnitudes of 6.5 or brighter. When the declination sign is 0, the degree, minute, and second values should be interpreted as negative.</small>
             </p>
             <table class="data-description">
                 <thead>
                 <tr>
-                    <th>列</th>
-                    <th>説明</th>
+                    <th>Column</th>
+                    <th>Description</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <td>1</td>
-                    <td>HIP番号：1～120416</td>
+                    <td>HIP Number: 1-120416</td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>赤経：時（整数）</td>
+                    <td>RA: Hour (integer)</td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>赤経：分（整数）</td>
+                    <td>RA: Minute (integer)</td>
                 </tr>
                 <tr>
                     <td>4</td>
-                    <td>赤経：秒（小数）</td>
+                    <td>RA: Second (decimal)</td>
                 </tr>
                 <tr>
                     <td>5</td>
-                    <td>赤緯：符号（0：- 1：+）</td>
+                    <td>Dec: Sign (0: negative, 1: positive)</td>
                 </tr>
                 <tr>
                     <td>6</td>
-                    <td>赤緯：度（整数）</td>
+                    <td>Dec: Degree (integer)</td>
                 </tr>
                 <tr>
                     <td>7</td>
-                    <td>赤緯：分（整数）</td>
+                    <td>Dec: Minute (integer)</td>
                 </tr>
                 <tr>
                     <td>8</td>
-                    <td>赤緯：秒（小数）</td>
+                    <td>Dec: Second (decimal)</td>
                 </tr>
                 <tr>
                     <td>9</td>
-                    <td>視等級：等級（小数）</td>
+                    <td>Visual Magnitude (decimal)</td>
                 </tr>
                 </tbody>
             </table>
         </li>
         <li>
-            <a href="data/hip_constellation_line.csv" download>hip_constellation_line.csv</a> - 星座線データ。
+            <a href="data/hip_constellation_line.csv" download>hip_constellation_line.csv</a> - Constellation line data.
             <p>
-                <small>Stellariumの星座線データを元に作成した676行のデータ。2つののHIP番号を使って、恒星を繋ぐ星座線を描きます。</small>
+                <small>676 lines of data created based on Stellarium's constellation data. Two HIP numbers are used to connect stars and form constellation lines.</small>
             </p>
             <table class="data-description">
                 <thead>
                 <tr>
-                    <th>列</th>
-                    <th>説明</th>
+                    <th>Column</th>
+                    <th>Description</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <td>1</td>
-                    <td>星座：略符</td>
+                    <td>Constellation: Abbreviation</td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>HIP番号</td>
+                    <td>HIP Number</td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>HIP番号</td>
+                    <td>HIP Number</td>
                 </tr>
                 </tbody>
             </table>
         </li>
         <li>
-            <a href="data/hip_constellation_line_star.csv" download>hip_constellation_line_star.csv</a> - 星座線の恒星データ。
+            <a href="data/hip_constellation_line_star.csv" download>hip_constellation_line_star.csv</a> - Stellar data for constellation lines.
             <p>
-                <small>星座線上の恒星データ692行を収録。星座線データとペアで使用することで、星座線を描ける。赤緯：度がマイナスのときは、赤緯：分、赤緯：秒にもマイナス符号をつける必要がある。</small>
+                <small>Contains data for 692 stars that form constellation lines. When used with the constellation line data, it allows drawing of constellation patterns. When declination degree is negative, you must also apply negative signs to declination minutes and seconds.</small>
             </p>
             <table class="data-description">
                 <thead>
                 <tr>
-                    <th>列</th>
-                    <th>説明</th>
+                    <th>Column</th>
+                    <th>Description</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <td>1</td>
-                    <td>HIP番号</td>
+                    <td>HIP Number</td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>赤経：時（整数）</td>
+                    <td>RA: Hour (integer)</td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>赤経：分（整数）</td>
+                    <td>RA: Minute (integer)</td>
                 </tr>
                 <tr>
                     <td>4</td>
-                    <td>赤経：秒（小数）</td>
+                    <td>RA: Second (decimal)</td>
                 </tr>
                 <tr>
                     <td>5</td>
-                    <td>赤緯：度（整数）</td>
+                    <td>Dec: Degree (integer)</td>
                 </tr>
                 <tr>
                     <td>6</td>
-                    <td>赤緯：分（整数）</td>
+                    <td>Dec: Minute (integer)</td>
                 </tr>
                 <tr>
                     <td>7</td>
-                    <td>赤緯：秒（小数）</td>
+                    <td>Dec: Second (decimal)</td>
                 </tr>
                 <tr>
                     <td>8</td>
-                    <td>視等級：等級（小数）</td>
+                    <td>Visual Magnitude (decimal)</td>
                 </tr>
                 <tr>
                     <td>9</td>
-                    <td>年周視差（ミリ秒角）</td>
+                    <td>Annual Parallax (milliarcseconds)</td>
                 </tr>
                 <tr>
                     <td>10</td>
-                    <td>赤経方向固有運動（ミリ秒角／年）</td>
+                    <td>Proper Motion in RA (milliarcseconds/year)</td>
                 </tr>
                 <tr>
                     <td>11</td>
-                    <td>赤緯方向固有運動（ミリ秒角／年）</td>
+                    <td>Proper Motion in Dec (milliarcseconds/year)</td>
                 </tr>
                 <tr>
                     <td>12</td>
-                    <td>B-V色指数</td>
+                    <td>B-V Color Index</td>
                 </tr>
                 <tr>
                     <td>13</td>
-                    <td>V-I色指数</td>
+                    <td>V-I Color Index</td>
                 </tr>
                 <tr>
                     <td>14</td>
-                    <td>スペクトル分類</td>
+                    <td>Spectral Classification</td>
                 </tr>
                 </tbody>
             </table>
         </li>
     </ul>
 
-    <p>データの作成方法は<a
-            href="https://github.com/creativival/hipparcos_planetarium_data_creator/blob/main/README.md">README.md</a>を参照してください。
+    <p>For information on how the data was created, please refer to the
+            <a href="https://github.com/creativival/hipparcos_planetarium_data_creator/blob/main/README.md">README.md</a>.
     </p>
 
     <div class="footer">

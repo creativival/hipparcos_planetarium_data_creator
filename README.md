@@ -12,18 +12,18 @@ Before running the scripts, you need to download the Stellarium sky culture data
 4. Alternatively, you can use wget or curl:
 
 ```bash
-   curl -o index.json https://raw.githubusercontent.com/Stellarium/stellarium/master/skycultures/modern/index.json
-``````
+curl -o index.json https://raw.githubusercontent.com/Stellarium/stellarium/master/skycultures/modern/index.json
+```
 
 This step is necessary to respect the copyright of the Stellarium project, which is licensed under GPL.
 
-# Install dependencies
+## Install dependencies
 
 ```bash
 pip install astroquery pandas
 ```
 
-# Usage
+## Usage
 
 ```bash
 python create_hip_lite_major.py
@@ -31,13 +31,18 @@ python create_hip_constellation_line.py
 python create_hip_constellation_line_star.py
 ```
 
-# License
+## Data Files
+
+The generated data files are available on GitHub Pages:
+- [Japanese Version](https://creativival.github.io/hipparcos_planetarium_data_creator/index.html)
+- [English Version](https://creativival.github.io/hipparcos_planetarium_data_creator/index.en.html)
+
+## License
 This project is licensed under the GNU General Public License v2.0 (GPLv2) - see the LICENSE file for details.
 The data from the Hipparcos catalog is based on public domain data from the ESA Hipparcos mission.
 Constellation data derived from Stellarium is used under the terms of the GPLv2 license, consistent with Stellarium's licensing.
 
-# Acknowledgements
+## Acknowledgements
 
-- Stellarium for the constellation line data
-- VizieR/CDS for hosting the astronomical catalogs
-
+- [Stellarium](https://stellarium.org/) for the constellation line data
+- [VizieR/CDS](http://vizier.u-strasbg.fr/) for hosting the astronomical catalogs
